@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import MultiCompany
+from .serializers import MultiCompanySerializer
 
-# Create your views here.
+class MultiCompanyViewSet(viewsets.ModelViewSet):
+    queryset = MultiCompany.objects.all()
+    serializer_class = MultiCompanySerializer
